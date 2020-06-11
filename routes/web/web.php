@@ -21,17 +21,14 @@ Route::get('/post/{post}', 'PostController@show')->name('post');
 
 Route::middleware('auth')->group(function (){
 
-
     Route::get('admin/posts/clearImage', 'PostController@clear')->name('post.clear');
     Route::put('admin/posts/{user}/update/user', 'UserController@update')->name('user.profile.update');
     Route::delete('admin/users/{user}/destroy','UserController@destroy')->name('users.destroy');
     Route::get('/admin/users/{user}/profile','UserController@show')->name('user.profile.show');
 
+});
 
-<<<<<<< HEAD:routes/web/web.php
-=======
-<<<<<<< HEAD:routes/web/web.php
->>>>>>> b5c000d45e579e5902e530ec5f44db1efda8780f:routes/web.php
+
     Route::middleware(['role:admin','auth'])->group(function (){
         Route::get('admin/users','UserController@index')->name('users.index');
         Route::put('/users/{user}/attach','UserController@attach')->name('user.role.attach');
@@ -40,12 +37,8 @@ Route::middleware('auth')->group(function (){
 
     Route::middleware('can:view,user')->group(function (){
         Route::put('admin/posts/{user}/update/user', 'UserController@update')->name('user.profile.update');
-<<<<<<< HEAD:routes/web/web.php
-=======
-=======
+    });
+
     Route::middleware('role:admin')->group(function (){
         Route::get('admin/users','UserController@index')->name('users.index');
->>>>>>> 101db6b50438749230d3c2a16a55e0f8a861e046:routes/web.php
->>>>>>> b5c000d45e579e5902e530ec5f44db1efda8780f:routes/web.php
-    });
 });

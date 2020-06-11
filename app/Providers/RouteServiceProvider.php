@@ -88,7 +88,6 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web/posts.php'));
-<<<<<<< HEAD
     }
 
     protected function mapRolesRoutes()
@@ -105,7 +104,5 @@ class RouteServiceProvider extends ServiceProvider
             ->middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web/permissions.php'));
-=======
->>>>>>> b5c000d45e579e5902e530ec5f44db1efda8780f
     }
 }
